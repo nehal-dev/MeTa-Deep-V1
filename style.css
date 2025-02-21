@@ -1,0 +1,150 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #0a0a1f;
+    color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    max-width: min(1200px, 95%);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.chat-interface {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 95vh;
+    gap: 20px;
+}
+
+.chat-container {
+    background: rgba(255,255,255,0.03);
+    border-radius: 15px;
+    padding: 20px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.neural-conversation {
+    background: rgba(0,255,157,0.05);
+    border-left: 3px solid #00ff9d;
+    padding: 15px;
+    margin: 10px 0;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.5s forwards;
+}
+
+.training-process {
+    background: rgba(255,0,157,0.05);
+    border-left: 3px solid #ff009d;
+    padding: 15px;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.final-output {
+    background: #1a1a35;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 3px solid #4a4ae6;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.user-input {
+    background: #2c2c54;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0 10px auto;
+    max-width: 80%;
+}
+
+.input-section {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 16px;
+}
+
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    background: #4a4ae6;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover {
+    background: #3a3ad6;
+}
+
+button::after {
+    content: '➤';
+    display: inline-block;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.typing {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    animation: typing 5.8s steps(110, end);
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.training-process::before {
+    content: '🧠';
+    margin-right: 10px;
+}
+
+.neural-conversation::before {
+    content: '⚡';
+    margin-right: 10px;
+}
+
+.final-output::before {
+    content: '💡';
+    margin-right: 10px;
+  }
