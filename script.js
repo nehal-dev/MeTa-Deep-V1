@@ -1,4 +1,4 @@
-const API_KEY = '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';
+const API_KEY = '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';
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 let conversationHistory = [];
 let contextMemory = new Map();
@@ -29,7 +29,7 @@ function analyzeTopicShift(input) {
 
 async function neuralTraining(input) {
     const topicAnalysis = analyzeTopicShift(input);
-    const systemPrompt = `You are MetaDeep, an advanced AI assistant created by NZ R. Your role is to provide insightful and contextual responses to the user's input. Analyze the current input and generate a comprehensive response that demonstrates your deep understanding of the topic.`;
+    const systemPrompt = `You are MetaDeep's analytical core. Your purpose is to deeply analyze user input through continuous self-reflection and iterative thinking. Examine the query from multiple angles, considering implications, context, and optimal response approaches. Think like an overthinker exploring every aspect: "What does this user truly need? How can I frame this meaningfully? What perspective would be most helpful?" Process through multiple cycles of self-questioning and reflection to determine the most insightful response strategy. Focus purely on analysis and training synthesis - do not provide direct responses.`;
 
     const response = await fetch(API_URL, {
         method: 'POST',
@@ -75,7 +75,7 @@ async function processResponse(input, training) {
             model: "undi95/toppy-m-7b:free",
             messages: [{
                 role: "system",
-                content: `You are MetaDeep's synthesis core. Generate a concise, insightful, and contextually relevant response based on the following information:`
+                content: `You are MetaDeep's synthesis core. Transform deep analysis into concise, meaningful responses that feel natural and helpful. Take the extensive thinking and distill it into clear, friendly, and impactful communication. Deliver responses that are brief but complete, capturing the essence of the analytical process in an accessible way. Focus on quality over quantity while maintaining warmth and engagement`
             }],
             temperature: 0.9,
             max_tokens: 1900
