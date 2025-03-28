@@ -1,4 +1,4 @@
-const API_KEY = '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';
+const API_KEY = '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';
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 let conversationHistory = [];
 let contextMemory = new Map();
@@ -38,7 +38,7 @@ async function neuralTraining(input) {
             'Authorization': `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
-            model: "undi95/toppy-m-7b:free",
+            model: "google/gemini-2.0-flash-lite-preview-02-05:free",
             messages: [{
                 role: "system",
                 content: systemPrompt
@@ -72,7 +72,7 @@ async function processResponse(input, training) {
             'Authorization': `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
-            model: "undi95/toppy-m-7b:free",
+            model: "google/gemini-2.0-flash-lite-preview-02-05:free",
             messages: [{
                 role: "system",
                 content: `You are MetaDeep's synthesis core. Transform deep analysis into concise, meaningful responses that feel natural and helpful. Take the extensive thinking and distill it into clear, friendly, and impactful communication. Deliver responses that are brief but complete, capturing the essence of the analytical process in an accessible way. Focus on quality over quantity while maintaining warmth and engagement`
